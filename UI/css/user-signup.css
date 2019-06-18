@@ -15,7 +15,6 @@ body {
 
 .header-main,
 .footer-main {
-	height: 60px;
 	width: 100%;
 	background: #4c06a8;
 }
@@ -50,23 +49,16 @@ li {
 
 main {
 	flex: 1;
-	background: url('../images/black-car-car-fancy-104401.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	width: 100%;
-	height: 80vh;
-	position: relative;
 }
 
 
-	#signup {
-		color: #231313;
-		margin-top: 0.5em;
-		padding: 0;
-		text-align: center;
-		font-size: 1em
-	}
+#signup {
+	color: #231313;
+	margin-top: 0.5em;
+	padding: 0;
+	text-align: center;
+	font-size: 1em
+}
 
 .signup-container {
 	display: flex;
@@ -101,35 +93,36 @@ main {
 .signin-container {
 	display: flex;
 	flex-direction: column;
-	background: rgb(253, 253, 253);
+	background: rgb(246, 244, 248);
 	width: 80%;
 	margin: 0 auto;
-	margin-top: 5em;
-	padding: 0em 1em 1em 1em;
+	margin-top: 2em;
+	padding: 1em 1em 1em 1em;
 	border-radius: 10px;
 }
 
 #signin {
 	color: #231313;
-	margin: 0;
+	margin: 1em;
 	padding-top: 0.5em;
 	text-align: center;
+	font-size: 1.5em;
 }
 
 .signin-container p {
-	margin: 0 auto;
+	margin: 1em auto;
 	padding-bottom: 0.5em;
 }
 
 .signin-container p a {
-	margin: 0 auto;
+	margin: 1em auto;
 	font-size: 1.3em;
 	font-weight: bold;
 	text-decoration: none;
 	color: black;
 	border: 2px;
-	background: #7c5ca7;
-	padding: 0 0.5em;
+	padding: 0 0em;
+	text-decoration: underline;
 	border-radius: 5px;
 }
 
@@ -192,7 +185,7 @@ input[type=submit]:hover {
 	.signup-container {
 		display: flex;
 		flex-direction: column;
-		background:rgb(247, 246, 248);
+		background: rgb(247, 246, 248);
 		width: 60vh;
 		height: 70vh;
 		margin: 0 auto;
@@ -204,14 +197,14 @@ input[type=submit]:hover {
 	.signin-container {
 		display: flex;
 		flex-direction: column;
-		background: rgb(245, 224, 236);
+		background: rgb(247, 246, 248);
 		width: 60vh;
-		height: 50vh;
 		margin: 0 auto;
 		margin-top: 6em;
 		padding: 1em 1em 1em 1em;
 
 	}
+
 	input[type=submit] {
 		width: 100%;
 		background-color: #5013a0;
@@ -228,6 +221,7 @@ input[type=submit]:hover {
 	nav a {
 		margin-right: 2em;
 	}
+
 	#signup {
 		color: #231313;
 		margin-top: 1em;
