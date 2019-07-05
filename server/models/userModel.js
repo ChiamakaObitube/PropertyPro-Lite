@@ -14,5 +14,10 @@ class User {
     users.push(newUser);
     return newUser;
   }
+
+  getSpecificUser(email) {
+    const specificUser = users.find(user => user.email === email);
+    return specificUser;
+  }
 }
 export default new User();
