@@ -1,0 +1,40 @@
+{
+  "name": "propertypro-lite",
+  "version": "1.0.0",
+  "description": "A place where you can search for properties for sale or rent",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon --exec babel-node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChiamakaObitube/PropertyPro-Lite.git"
+  },
+  "keywords": [
+    "property"
+  ],
+  "author": "chiamaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChiamakaObitube/PropertyPro-Lite/issues"
+  },
+  "homepage": "https://github.com/ChiamakaObitube/PropertyPro-Lite#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/register": "^7.4.4",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4"
+  }
+}
