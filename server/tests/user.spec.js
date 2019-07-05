@@ -29,3 +29,19 @@ describe('POST auth/signup', () => {
       });
   });
 });
+describe('POST auth/signin', () => {
+  it('should not signin an existing user if users email does not exist', (done) => {
+    const existingUser = {
+      email: 'chiomab@yahoo.com',
+      password: '12345',
+    };
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send(existingUser)
+      .end((err, res) => {
+        expect(res).to.have.status(401);
+        expect(res.body).be.an('object');
+        done();
+      });
+  });
+});
