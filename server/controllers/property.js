@@ -32,9 +32,8 @@ class propertyController {
 
   static getSpecificProperty(req, res) {
     const { id } = req.params;
-    const { body } = req.params;
     const property = propertyModel.getSpecificProperty(Number(id));
-    const specificProperty = propertyModel.getSpecificProperty(body);
+
     if (!property) {
       return res.status(404).json({
         status: 404,
