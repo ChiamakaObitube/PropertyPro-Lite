@@ -48,3 +48,17 @@ describe('/GET a property by their id', () => {
       });
   });
 });
+
+describe('/DELETE a property by their id', () => {
+  it('it should delete a property by their id', (done) => {
+    const id = 1;
+    chai.request(app)
+      .delete(`/api/v1/property/${id}`)
+      .end((err, res) => {
+        expect(res).to.have.status('success');
+        expect(res.body).to.be.an('object');
+        expect(res.body.message).to.equal('Property advert deleted successfully');
+        done();
+      });
+  });
+});
