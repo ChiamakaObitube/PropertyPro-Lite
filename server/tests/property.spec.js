@@ -35,3 +35,16 @@ describe('/GET /api/v1/property', () => {
       });
   });
 });
+describe('/GET a property by their id', () => {
+  it('it should get a specific property by the given id', (done) => {
+    const id = 1;
+    chai.request(app)
+      .get(`/api/v1/property/${id}`)
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).be.an('object');
+        expect(res.body.message).to.equal('Property Ad retrieved successfully.');
+        done();
+      });
+  });
+});

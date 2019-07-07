@@ -8,5 +8,6 @@ const router = Router();
 
 router.post('/property', upload.single('image_url'), cloudinaryImage, propertyController.createNewAd);
 router.get('/property', propertyController.getAllProperty);
+router.get('/property/:id', propertyController.getSpecificProperty);
 
 export default router;
