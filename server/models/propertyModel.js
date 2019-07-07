@@ -29,6 +29,14 @@ class Property {
     return specificProperty;
   }
 
+  deleteOneProperty(id) {
+    const specificProperty = properties.find(property => property.id === id);
+
+    const index = properties.indexOf(specificProperty);
+    properties.splice(index, 1);
+    return specificproperty;
+  }
+
 }
 
 export default new Property();
