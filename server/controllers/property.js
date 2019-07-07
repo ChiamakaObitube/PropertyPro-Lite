@@ -1,4 +1,5 @@
 import propertyModel from '../models/propertyModel';
+import properties from '../database/property';
 
 class propertyController {
   static createNewAd(req, res) {
@@ -18,6 +19,33 @@ class propertyController {
       data: newAd,
     });
   }
+
+  static markPropertySold(req, res) {
+    const { id } = req.params;
+    const property = propertyModel.getSpecificProperty(Number(id));
+
+    if (!property) {
+      return res.status(404).json({
+        status: 404,
+        message: 'This property does not exist',
+      });
+    }
+    if (!property.status) {
+      return res.status(404).json({
+        status: 400,
+        error: 'property status is required',
+      });
+    }
+    property.status = req.body.status;
+
+
+    return res.status(200).json({
+      status: 200,
+      message: 'property successfully marked as sold',
+      data: property,
+    });
+  }
+
 
   static getAllProperty(req, res) {
     const allProperty = propertyModel.getAllProperty();
@@ -64,7 +92,7 @@ class propertyController {
         message: 'This property does not exist',
       });
     }
-	
+
     return res.status(200).json({
       status: 200,
       message: 'Property advert deleted successfully',

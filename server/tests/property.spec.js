@@ -23,6 +23,19 @@ describe('POST /api/v1/property', () => {
   });
 });
 
+describe('/PATCH mark property as sold', () => {
+  it('it should mark property as sold', (done) => {
+    const id = 1;
+    chai.request(app)
+      .patch(`/api/v1/property/${id}/sold`)
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.a('object');
+        expect(res.body.message).to.equal('property successfully marked as sold');
+        done();
+      });
+  });
+});
 describe('/GET /api/v1/property', () => {
   it('it should get all property adverts', (done) => {
     chai.request(app)
@@ -55,7 +68,7 @@ describe('/DELETE a property by their id', () => {
     chai.request(app)
       .delete(`/api/v1/property/${id}`)
       .end((err, res) => {
-        expect(res).to.have.status('success');
+        expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
         expect(res.body.message).to.equal('Property advert deleted successfully');
         done();
