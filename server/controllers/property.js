@@ -30,6 +30,24 @@ class propertyController {
     });
   }
 
+  static getSpecificProperty(req, res) {
+    const { id } = req.params;
+    const { body } = req.params;
+    const property = propertyModel.getSpecificProperty(Number(id));
+    const specificProperty = propertyModel.getSpecificProperty(body);
+    if (!property) {
+      return res.status(404).json({
+        status: 404,
+        message: 'This property does not exist',
+      });
+    }
+    return res.status(200).json({
+      status: 200,
+      message: 'Property Ad retrieved successfully.',
+      data: property,
+    });
+  }
+
 }
 
 export default propertyController;
