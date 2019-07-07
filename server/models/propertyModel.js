@@ -7,13 +7,13 @@ class Property {
       id: property.length + 1,
       owner: users[users.length - 1].id,
       email: users[users.length - 1].email,
-      created_on: Date(),
-      state: data.state,
       status: 'available',
       price: JSON.parse(10000),
+      state: data.state,
       city: data.city,
       address: data.address,
       type: data.type,
+      created_on: Date(),
       image_url: data.image_url,
     };
     property.push(newAd);
