@@ -19,6 +19,10 @@ class Property {
     property.push(newAd);
     return newAd;
   }
+
+  getAllProperty() {
+    return property;
+  }
 }
 
 export default new Property();

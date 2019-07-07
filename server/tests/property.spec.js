@@ -22,3 +22,16 @@ describe('POST /api/v1/property', () => {
       });
   });
 });
+
+describe('/GET /api/v1/property', () => {
+  it('it should get all property adverts', (done) => {
+    chai.request(app)
+      .get('/api/v1/property')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).be.an('object');
+        expect(res.body.message).to.equal('All Property Ads retrieved successfully.');
+        done();
+      });
+  });
+});
