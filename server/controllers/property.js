@@ -20,6 +20,33 @@ class propertyController {
     });
   }
 
+  static updatePropertyData(req, res) {
+    const { id } = req.params;
+    const property = propertyModel.getSpecificProperty(Number(id));
+
+    if (!property) {
+      return res.status(404).json({
+        status: 404,
+        message: 'This property does not exist',
+      });
+    }
+
+    const updatedProperty = {
+      id: property.id,
+      status: req.body.status || property.status,
+      price: req.body.price || property.price,
+      type: req.body.type || property.type,
+      city: req.body.city || property.city,
+      address: req.body.address || property.address,
+    };
+		
+    return res.status(200).json({
+      status: 200,
+      message: 'property successfully updated',
+      data: updatedProperty,
+    });
+  }
+
   static markPropertySold(req, res) {
     const { id } = req.params;
     const property = propertyModel.getSpecificProperty(Number(id));
@@ -36,9 +63,8 @@ class propertyController {
         error: 'property status is required',
       });
     }
+
     property.status = req.body.status;
-
-
     return res.status(200).json({
       status: 200,
       message: 'property successfully marked as sold',

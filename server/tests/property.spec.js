@@ -23,6 +23,19 @@ describe('POST /api/v1/property', () => {
   });
 });
 
+describe('/PATCH update property data', () => {
+  it('user can update any category of the property data', (done) => {
+    const id = 1;
+    chai.request(app)
+      .patch(`/api/v1/property/${id}`)
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.a('object');
+        expect(res.body.message).to.equal('property data successfully updated');
+        done();
+      });
+  });
+});
 describe('/PATCH mark property as sold', () => {
   it('it should mark property as sold', (done) => {
     const id = 1;
