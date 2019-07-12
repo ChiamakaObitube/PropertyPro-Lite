@@ -6,7 +6,8 @@ class Property {
     const newAd = {
       id: properties.length + 1,
       owner: users[users.length - 1].id,
-      email: users[users.length - 1].email,
+      owner_email: users[users.length - 1].email,
+      owner_phone_number: users[users.length - 1].phone_number,
       status: 'available',
       price: JSON.parse(10000),
       state: data.state,

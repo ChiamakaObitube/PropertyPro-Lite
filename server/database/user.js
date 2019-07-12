@@ -5,7 +5,8 @@ const users = [{
   lastName: 'Umeh',
   address: 'Lagos',
   password: '23434',
-  // is_admin: false,
+  phone_number: parseFloat('0909879'),
+  is_admin: false,
 },
 {
   id: 2,
@@ -14,7 +15,8 @@ const users = [{
   lastName: 'Umeh',
   password: '234114',
   address: 'Lagos',
-  // is_admin: false,
+  phone_number: parseFloat('0909879'),
+  is_admin: false,
 },
 {
   id: 3,
@@ -23,7 +25,8 @@ const users = [{
   lastName: 'Umeh',
   password: '23434',
   address: 'Lagos',
-  // is_admin: true,
+  phone_number: parseFloat('0909879'),
+  is_admin: false,
 },
 {
   id: 4,
@@ -32,7 +35,8 @@ const users = [{
   lastName: 'Umeh',
   password: '23434',
   address: 'Lagos',
-  // is_admin: false,
+  phone_number: parseFloat('0909879'),
+  is_admin: false,
 },
 ];
 

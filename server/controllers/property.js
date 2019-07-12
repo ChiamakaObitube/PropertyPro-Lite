@@ -39,7 +39,7 @@ class propertyController {
       city: req.body.city || property.city,
       address: req.body.address || property.address,
     };
-		
+
     return res.status(200).json({
       status: 200,
       message: 'property successfully updated',
@@ -74,23 +74,39 @@ class propertyController {
 
 
   static getAllProperty(req, res) {
-    const allProperty = propertyModel.getAllProperty();
+    const allProperties = propertyModel.getAllProperty();
 
-    if (allProperty.length === 0) return res.status(404).send('There are no properties');
+    if (allProperties.length === 0) return res.status(404).send('There are no properties');
 
-    if (!allProperty) {
+    if (!allProperties) {
       return res.status(404).send({
         status: 404,
         error: 'There are no properties in this database',
       });
     }
 
-    return res.status(200).send({
+    // Filtering properties of a specifc type e.g 1 bedroom, 2 bedroom, mini-flat
+    let response = [];
+    console.log(req.query);
+    if (typeof req.query.type !== 'undefined') {
+      allProperties.filter((property) => {
+        if (property.type.toString() == req.query.type) {
+          response.push(property);
+        }
+      });
+    }
+    // If there is not filtering of properties, return all cars
+    if (Object.keys(req.query).length === 0) {
+      response = allProperties;
+    }
+    // returns all cars
+    res.status(200).json({
       status: 200,
       message: 'All Property Ads retrieved successfully.',
-      data: allProperty,
+      data: response,
     });
   }
+
 
   static getSpecificProperty(req, res) {
     const { id } = req.params;
