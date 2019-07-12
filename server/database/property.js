@@ -1,7 +1,8 @@
 const property = [{
   id: 1,
   owner: 1,
-  email: 'user@example.com',
+  owner_email: 'user@example.com',
+  owner_phone_number: parseFloat('0909879'),
   created_on: Date(),
   state: 'Lagos',
   status: 'sold',
@@ -14,7 +15,8 @@ const property = [{
 {
   id: 2,
   owner: 2,
-  email: 'seyi@example.com',
+  owner_email: 'seyi@example.com',
+  owner_phone_number: parseFloat('0909879'),
   created_on: Date(),
   state: 'Lagos',
   status: 'available',
@@ -27,7 +29,8 @@ const property = [{
 {
   id: 3,
   owner: 3,
-  email: 'tobe@example.com',
+  owner_email: 'tobe@example.com',
+  owner_phone_number: parseFloat('0909879'),
   created_on: Date(),
   state: 'Lagos',
   status: 'available',
@@ -40,7 +43,8 @@ const property = [{
 {
   id: 4,
   owner: 4,
-  email: 'glo@example.com',
+  owner_email: 'glo@example.com',
+  owner_phone_number: parseFloat('0909879'),
   created_on: Date(),
   state: 'Lagos',
   status: 'available',
