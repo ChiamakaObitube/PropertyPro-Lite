@@ -1,5 +1,5 @@
-import UserModel from '../models/userModel';
-import users from '../database/user';
+import UserModel from '../../models/userModel';
+import users from '../../database/user';
 
 class userController {
   static userSignup(req, res) {
