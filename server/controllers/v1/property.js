@@ -1,5 +1,5 @@
-import propertyModel from '../models/propertyModel';
-import properties from '../database/property';
+import propertyModel from '../../models/propertyModel';
+import properties from '../../database/property';
 
 class propertyController {
   static createNewAd(req, res) {
